@@ -1,0 +1,127 @@
+/*general styling*/
+
+/*variables*/
+:root{
+    --mainTextColor: #2c2b2b;
+    
+}
+
+/*base styles*/
+html{
+    font-size: 16px;
+    
+}
+body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+}
+
+/*naviation styles*/
+nav{
+    background-color: #e9ecef;
+    
+}
+/* Campgrounds page styles*/
+.navbar a{
+    color: inherit !important;
+    font-size: .85rem;
+}
+/* .burger-container{
+    position: relative;
+    width: 30px ;
+    margin: 0 auto;
+}
+.hamburger{
+    cursor: pointer;
+    display: block;
+    border:solid 2px gray;
+    border-radius: 10%;
+    padding: 5% 10%;
+}
+.hamburger span{
+    background: #a9aaac;
+    display: block;
+    padding: 5%;
+    width: 30px;
+    height:0.22em;
+    margin-bottom:5%;
+    position: relative;
+    top: 0;
+    transition: all ease-in-out 0.4s;
+
+} */
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.jumbotron{
+    padding: auto 0;
+    
+}
+.jumbotron .container{
+    padding: 0;
+}
+.jumbotron .container > h1{
+    
+    font-size: 2.4rem ;
+    
+}
+.btn{
+    color: var(--mainTextColor);
+}
+
+/* form-page styles*/
+.formdiv{
+    width: 40%;
+    margin: 2% auto 0;
+    
+    
+}
+.form-control{
+    border: 1px solid black;
+    border-radius: 10px;
+    
+}
+.card-body.bg-light{
+    text-align: start;
+    font-size: 0.9rem;
+    color: #56595c;
+    padding: .5rem .25rem !important;
+    
+}
+.camp-index{
+    height: 150px;
+}
+.camp-index img{
+    height: 100%;
+    width: 100%;
+}
+.caption-name{
+    display: inline-block;
+}
+.btn-sm {
+    padding: .25rem .5rem;
+    font-size: 0.75rem;
+    line-height: 1;
+    border-radius: .2rem;
+    color: white;
+}
+.figure.img-thumbnail{
+    padding: 0;
+}
+
+.form-button{
+    display: inline-flex;
+    margin-bottom: .25rem;
+}
+.edit-form{
+    display: inline-flex;
+}
+textarea{
+    
+    width: 100%;
+    border: #2c2b2b 1px solid;
+}
+

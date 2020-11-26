@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yelp Camp</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/camp.css">
+    <script src="/scripts/hamburger.js"></script>
+
+</head>
+<body>
+<nav class="navbar navbar-default navbar-expand-sm mb-3">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="/" class="navbar-brand"> YelpCamp</a>
+        </div>
+        <!-- <div class="container burger-container">
+            <div class="hamburger">
+                <span>&nbsp;</span>
+                <span>&nbsp;</span>
+                <span>&nbsp;</span>
+               
+            </div>
+        </div> -->
+        <div class="collapse navbar-collapse" id='navigation'>
+            <ul class="nav navbar-nav ml-auto">
+               <% if(!currentUser){ %>
+                    <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
+                    <li class="nav-item"><a href="/register" class="nav-link">Sign Up</a></li>
+
+                <% }else{ %>
+                    <li> <a href=#" class="nav-link">Welcome <%= currentUser.username %></a> </li>
+                    <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
+                <% } %>
+                
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <% if(error && error.length > 0 ){ %>
+        <div class="alert alert-danger" role="alert">
+            <%= error %>
+        </div>
+    <% }else if(success && success.length > 0){ %>
+        <div class="alert alert-success" role="alert">
+            <%= success %>
+        </div>
+    <% } %>
+     
+     
+</div>
+
+
