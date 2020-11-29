@@ -10,11 +10,13 @@ const campgroundRoutes  = require('../routes/campgrounds'),
     bodyparser          = require('body-parser'),
     passport            = require('passport'),
     mongoose            = require('mongoose');
-    
+    dbUrl = process.env.DB_URL || "mongodb://localhost:27017/yelpDB";
  
     
-    
-mongoose.connect('mongodb://localhost:27017/yelpDB',{ useNewUrlParser: true },{ useUnifiedTopology: true});
+
+
+mongoose.connect(dbUrl, { useNewUrlParser: true }, { useUnifiedTopology: true });
+
 
 
 module.exports= function(app) {

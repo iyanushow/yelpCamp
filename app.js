@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express'),
     controller = require('./controllers/yelpController'),
     methodOveride = require('method-override'),
@@ -11,7 +12,8 @@ app.use(methodOveride('_method'))
 // seedDB();
 controller(app);
 
+const port = process.env.PORT || 3000
 
-app.listen(3000,process.env.PORT,process.env.IP,function(){
+app.listen(port,function(){
     console.log('server running');
 });   
