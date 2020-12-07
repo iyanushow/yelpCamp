@@ -15,7 +15,9 @@ const campgroundRoutes  = require('../routes/campgrounds'),
     
 
 
-mongoose.connect(dbUrl, { useNewUrlParser: true }, { useUnifiedTopology: true });
+mongoose.connect(dbUrl, { useNewUrlParser: true }, { useUnifiedTopology: true })
+    .then(() => console.log("Database Connected"))
+    .catch(err => console.log(`Database connection error: ${err.message}`));
 
 
 

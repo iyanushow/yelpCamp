@@ -41,8 +41,9 @@ router.get('/new',middle.isLoggedIn, (req, res) => {
 
 router.get('/:id', (req,res)=>{
     campground.findById(req.params.id).populate('comments').exec((err, camp)=>{
-        if(err){
-            console.log(err)
+        if(err || !camp){
+            console.log(err);
+            req.flash('error', "Sorry, campground does not exist")
         }
         else{ 
             res.render('campgrounds/show',{camp:camp})

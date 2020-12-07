@@ -24,7 +24,7 @@
                     <p>
                        <em>Submitted by <%= camp.author.username %></em>
                     </p>
-                   <% if(currentUser && camp.author.id.equals(currentUser._id)){ %>
+                   <% if(currentUser && camp.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
                         
                             <a href="/campgrounds/<%= camp._id %>/edit" class="btn btn-md btn-warning mb-1">Edit</a>
                             <form action="/campgrounds/<%= camp._id %>?_method=delete" method="post" class="form-button">
@@ -55,7 +55,7 @@
                                 <p class="mb-0 ">
                                     <%= comment.text %>
                                 </p>
-                                <% if( currentUser && comment.author.id.equals(currentUser._id)){ %>
+                                <% if( currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
                                     <div class="update-button">
                                         <a href="/campgrounds/<%= camp._id %>/comments/<%= comment._id %>/edit" class="btn btn-sm btn-warning m-auto">Edit</a>
                                         <form action="/campgrounds/<%= camp._id %>/comments/<%= comment._id %>?_method=delete" method="post" class="m-auto edit-form">
