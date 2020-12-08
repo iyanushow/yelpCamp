@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     campground.find({}, (err, camps) =>{ 
         if(err){console.log(`OOPS!!! ${err}`)}
         else{
-            res.render('campgrounds/index', {campgrounds: camps})  
+            res.render('campgrounds/index', {campgrounds: camps, page: 'campgrounds'})  
         };
     });
     
@@ -41,13 +41,14 @@ router.get('/new',middle.isLoggedIn, (req, res) => {
 
 router.get('/:id', (req,res)=>{
     campground.findById(req.params.id).populate('comments').exec((err, camp)=>{
-        if(err || !camp){
+        if(err || camp == undefined){
             console.log(err);
             req.flash('error', "Sorry, campground does not exist")
+            return res.redirect('/campgrounds');
         }
-        else{ 
-            res.render('campgrounds/show',{camp:camp})
-        }
+        
+        res.render('campgrounds/show', { camp: camp });
+        
     });
     
     
@@ -56,6 +57,12 @@ router.get('/:id', (req,res)=>{
 router.get('/:id/edit',middle.isOwner, (req,res)=>{
     // is user logged in
     campground.findById(req.params.id, (err, campground)=>{
+        if (err || camp == undefined) {
+            console.log(err);
+            req.flash('error', 'Sorry, campground does not exist!');
+            return res.redirect('/campgrounds');
+
+        }
         res.render('campgrounds/edit',{camp:campground});
     });   
 })

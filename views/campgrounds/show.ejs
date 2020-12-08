@@ -1,6 +1,5 @@
 <%- include ('../partials/header.ejs') %>
 
-<div class="container">
     <div class="row">
         <div class="col-md-3 mb-3">
             <p class="lead">YelpCamp</p>
@@ -22,7 +21,7 @@
                         <%= camp.description %>
                     </p>
                     <p>
-                       <em>Submitted by <%= camp.author.username %></em>
+                       <em>Submitted by <a href="/users/<%= camp.author.id %> "><%= camp.author.username %> </a>, <%= moment(camp.createdAt).fromNow() %> </em>
                     </p>
                    <% if(currentUser && camp.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
                         
@@ -49,7 +48,7 @@
                     <div class="row mb-3">
                         <div class="col-md-12 comm">
                             <%= comment.author.username %>
-                            <span class="float-right pr-2">3 days ago</span>
+                            <span class="float-right pr-2"> <%= moment(comment.createdAt).fromNow() %> </span>
                             
                             <div class="comm-text">
                                 <p class="mb-0 ">
@@ -78,6 +77,4 @@
            
         </div>
     </div>
-</div>
-
 <%- include ('../partials/footer.ejs') %>

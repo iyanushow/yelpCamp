@@ -5,43 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yelp Camp</title>
     <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/burger.css">
     <link rel="stylesheet" href="/stylesheets/camp.css">
-    <script src="/scripts/hamburger.js"></script>
+    <script src="/scripts/jquery-3.5.1.min.js"></script>
+    <script src="/scripts/burger.js"></script>
 
 </head>
 <body>
-<nav class="navbar navbar-default navbar-expand-sm mb-3">
+<nav class="navbar navbar-default navbar-expand-sm">
     <div class="container-fluid">
         <div class="navbar-header">
+            <div class="burger-container navbar-toggler collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-controls="navigation">
+                <div class="burger">
+                    <span>&nbsp</span>
+                    <span>&nbsp</span>
+                    <span>&nbsp</span>
+                </div>
+            </div>
+        
             <a href="/" class="navbar-brand"> YelpCamp</a>
         </div>
-        <!-- <div class="container burger-container">
-            <div class="hamburger">
-                <span>&nbsp;</span>
-                <span>&nbsp;</span>
-                <span>&nbsp;</span>
-               
-            </div>
-        </div> -->
+        
         <div class="collapse navbar-collapse" id='navigation'>
-            <ul class="nav navbar-nav ml-auto">
-               <% if(!currentUser){ %>
-                    <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
-                    <li class="nav-item"><a href="/register" class="nav-link">Sign Up</a></li>
-
-                <% }else{ %>
-                    <li> <a href=#" class="nav-link">Welcome <%= currentUser.username %></a> </li>
-                    <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
-                <% } %>
-                
-                
+            <ul class="nav navbar-nav">
+                <li class="ml-3 <%= typeof page !== 'undefined' && page === 'campgrounds' ? 'active' : '' %>">
+                    <a href="/campgrounds">Home</a>
+                </li>
             </ul>
-
+            <ul class="nav navbar-nav ml-auto">
+                <% if(!currentUser){ %>
+                <li class=" nav-item <%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>">
+                    <a href="/login">Login</a>
+                </li>
+                <li class=" nav-item <%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %> ">
+                    <a href="/register">Sign Up</a>
+                </li>
+                <% } else { %>
+                <li><a href="#">Welcome <%= currentUser.username %></a></li>
+                <li class="ml-3"><a href="/logout">Logout</a></li>
+                <% } %>
+            </ul>
         </div>
     </div>
 </nav>
 
-<div class="container">
+
+<div class="container mt-3">
     <% if(error && error.length > 0 ){ %>
         <div class="alert alert-danger" role="alert">
             <%= error %>
@@ -54,5 +63,4 @@
      
      
 </div>
-
-
+<div class="container">

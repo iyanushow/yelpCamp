@@ -14,6 +14,7 @@ html{
 body{
     margin: 0;
     padding: 0;
+    height: 100vh;
     text-align: center;
 
 }
@@ -24,34 +25,35 @@ nav{
     
 }
 /* Campgrounds page styles*/
+.navbar{
+    padding: 0;
+}
+.navbar .container-fluid{
+    padding: .5rem 1rem;
+    margin: auto 5%;
+}
 .navbar a{
     color: inherit !important;
-    font-size: .85rem;
+    font-size: 1rem;
+    text-decoration: none;
 }
-/* .burger-container{
-    position: relative;
-    width: 30px ;
-    margin: 0 auto;
+.navbar-brand{
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.hamburger{
-    cursor: pointer;
-    display: block;
-    border:solid 2px gray;
-    border-radius: 10%;
-    padding: 5% 10%;
-}
-.hamburger span{
-    background: #a9aaac;
-    display: block;
-    padding: 5%;
-    width: 30px;
-    height:0.22em;
-    margin-bottom:5%;
-    position: relative;
-    top: 0;
-    transition: all ease-in-out 0.4s;
+.nav-item{
+    margin-right: 10px ;
+    padding:3px;
 
-} */
+}
+.nav-item a, a.navbar-brand {
+    text-decoration:none;
+}
+.active{
+    background-color: #a7abaf;
+    padding: 6.6px;
+    /* display: inline-block; */
+}
 .row{
     display: flex;
     flex-wrap: wrap;
@@ -124,4 +126,8 @@ textarea{
     width: 100%;
     border: #2c2b2b 1px solid;
 }
-
+.footer-container{
+    display: block;
+    position: fixed;
+    
+}

@@ -1,6 +1,6 @@
 <%- include ('../partials/header') %>
 
-<div class="container">
+
     <div class="row">
         <h2 class="col-12">Edit <%= camp.name %> Campground</h2>
         <div class="formdiv">
@@ -9,7 +9,7 @@
                     
                     <input class="form-control mb-3" type="text" name="camp[name]" id="campName" value="<%=camp.name %>">
                     
-                    <input class="form-control" type="number" name="camp[price] " id="campPrice" value="<%=camp.price %>" min="0.1" step="0.01">
+                    <input class="form-control" type="number" name="camp[price] " id="campPrice" value="<%=camp.price %>" min="0.1" step="0.01" required>
                 </div>
                 <div class="form-group">
                     
@@ -30,7 +30,7 @@
             <a href="/campgrounds/<%= camp._id %>">Go Back!</a>
         </div>
     </div>
-</div>
+
 
 
 

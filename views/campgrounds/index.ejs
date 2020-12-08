@@ -1,10 +1,8 @@
 <%- include ('../partials/header.ejs') %>
 
-
-<div class="container">
-    <header class="jumbotron">
+    <header class="mt-5 jumbotron">
         <div class="container">
-            <h1> Welcome to Yelp Campground Sites</h1>
+            <h1> Welcome to YelpCamp </h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             <a href="/campgrounds/new" class="btn btn-primary btn-md">
                 Add New Camp Site
@@ -15,7 +13,7 @@
     
     <div class="row text-center">
         <div class="col-lg-12">
-            <h3>Highest Rated Sites</h3>
+            <h3>Our Best Camp Sites</h3>
         </div>
         <% campgrounds.forEach((camp) => { %>
             <div class="camp col-md-3 col-sm-6 py-4">
@@ -41,16 +39,6 @@
         <% }) %>
     </div>
     
-    
-    
-</div>
-
-
-   
-
-
-
-
 <%- include ('../partials/footer.ejs') %>
 
 

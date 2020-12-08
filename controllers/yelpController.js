@@ -14,6 +14,8 @@ const campgroundRoutes  = require('../routes/campgrounds'),
  
     
 
+mongoose.Promise = global.Promise;
+
 
 mongoose.connect(dbUrl, { useNewUrlParser: true }, { useUnifiedTopology: true })
     .then(() => console.log("Database Connected"))
@@ -28,12 +30,14 @@ module.exports= function(app) {
         resave:false,
         saveUninitialized:false
     }))
+    app.locals.moment = require('moment')
     app.use(passport.initialize());
     app.use(passport.session());
     app.use(bodyparser.urlencoded({extended:true}));
     app.use(flash())
     app.use((req,res,next)=>{
         res.locals.currentUser = req.user;
+        // res.locals.page = req.page;
         res.locals.error = req.flash("error");
         res.locals.success = req.flash("success");
         next();
