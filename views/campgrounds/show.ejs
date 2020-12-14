@@ -25,12 +25,12 @@
                     </p>
                    <% if(currentUser && camp.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
                         
-                            <a href="/campgrounds/<%= camp._id %>/edit" class="btn btn-md btn-warning mb-1">Edit</a>
-                            <form action="/campgrounds/<%= camp._id %>?_method=delete" method="post" class="form-button">
-                                <button class="btn btn-danger btn-medium">Delete</button>
-                            </form>
+                        <a href="/campgrounds/<%= camp._id %>/edit" class="btn">Edit</a>
+                        <form action="/campgrounds/<%= camp._id %>?_method=delete" method="post" class="form-button">
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
                     <% } %>
-                            <a href="/campgrounds" class="btn btn-medium btn-primary mb-1">Back</a>
+                        <a href="/campgrounds" class="back mb-3">Go Back!</a>
                         
                     
                    
@@ -40,7 +40,7 @@
 
             <div class="card card-body bg-light">
                 <div class="text-right">
-                    <a href="/campgrounds/<%= camp._id %>/comments/new" class="btn btn-sm btn-success">Leave a Comment</a>
+                    <a href="/campgrounds/<%= camp._id %>/comments/new" class="btn">leave a comment</a>
                     
                 </div>
                 <hr>
@@ -56,9 +56,9 @@
                                 </p>
                                 <% if( currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
                                     <div class="update-button">
-                                        <a href="/campgrounds/<%= camp._id %>/comments/<%= comment._id %>/edit" class="btn btn-sm btn-warning m-auto">Edit</a>
+                                        <a href="/campgrounds/<%= camp._id %>/comments/<%= comment._id %>/edit" class="btn ">Edit</a>
                                         <form action="/campgrounds/<%= camp._id %>/comments/<%= comment._id %>?_method=delete" method="post" class="m-auto edit-form">
-                                            <button class="btn btn-danger btn-sm">Delete</button>
+                                            <button class="btn btn-danger ">Delete</button>
                                         </form>
                                     </div>
                                 <% } %>

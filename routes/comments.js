@@ -49,7 +49,7 @@ router.post('/',middle.isLoggedIn, (req,res)=>{
 }); 
 
 // EDIT UPDATE AND DESTROY ROUTES
-router.get('/:comm/edit',middle.isCommentOwner, (req,res)=>{
+router.get('/:comm/edit', middle.isCommentOwner, (req, res) => {
     comment.findById(req.params.comm, (err,comment) => {
         if(err){
             console.log(err)

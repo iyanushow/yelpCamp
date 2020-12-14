@@ -3,6 +3,12 @@
 /*variables*/
 :root{
     --mainTextColor: #2c2b2b;
+    --clr-primary-5: hsl(205, 51%, 44%);
+    --clr-primary-1: hsl(205, 86%, 17%);
+    --spacing: 0.1rem;
+    --radius: 0.25rem;
+    --transition: all 0.3s linear;
+    --clr-white: #fff;
     
 }
 
@@ -20,6 +26,9 @@ body{
 }
 
 /*naviation styles*/
+ul.navbar-nav li{
+    padding:10px ;
+}
 nav{
     background-color: #e9ecef;
     
@@ -29,8 +38,7 @@ nav{
     padding: 0;
 }
 .navbar .container-fluid{
-    padding: .5rem 1rem;
-    margin: auto 5%;
+    margin: auto 3%;
 }
 .navbar a{
     color: inherit !important;
@@ -50,7 +58,7 @@ nav{
     text-decoration:none;
 }
 .active{
-    background-color: #a7abaf;
+    background-color: #8f9396;
     padding: 6.6px;
     /* display: inline-block; */
 }
@@ -69,9 +77,6 @@ nav{
     
     font-size: 2.4rem ;
     
-}
-.btn{
-    color: var(--mainTextColor);
 }
 
 /* form-page styles*/
@@ -103,13 +108,13 @@ nav{
 .caption-name{
     display: inline-block;
 }
-.btn-sm {
+/* .btn-sm {
     padding: .25rem .5rem;
     font-size: 0.75rem;
     line-height: 1;
     border-radius: .2rem;
     color: white;
-}
+} */
 .figure.img-thumbnail{
     padding: 0;
 }
@@ -130,4 +135,45 @@ textarea{
     display: block;
     position: fixed;
     
+}
+/* buttons and links*/
+.btn{
+    display: inline-block;
+    background: var(--clr-primary-5);
+    color: var(--clr-white);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius);
+    border-color: transparent;
+    text-transform: capitalize;
+    font-size: 1rem;
+    letter-spacing: var(--spacing);
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-bottom: .6rem !important;
+}
+.btn-danger{
+    background: #c91010;
+}
+
+
+.btn:hover {
+    background: var(--clr-primary-1);
+    color: var(--clr-primary-5);
+}
+.btn-danger:hover {
+    background: #5e0c0c;
+   color: var(--clr-white);
+}
+.back{
+    color: #911515;
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-block;
+    
+}
+.back:hover{
+    color: #911515;
 }

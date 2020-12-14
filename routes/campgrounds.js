@@ -57,7 +57,7 @@ router.get('/:id', (req,res)=>{
 router.get('/:id/edit',middle.isOwner, (req,res)=>{
     // is user logged in
     campground.findById(req.params.id, (err, campground)=>{
-        if (err || camp == undefined) {
+        if (err || campground === undefined) {
             console.log(err);
             req.flash('error', 'Sorry, campground does not exist!');
             return res.redirect('/campgrounds');
