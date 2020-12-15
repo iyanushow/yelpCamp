@@ -22,6 +22,7 @@ body{
     padding: 0;
     height: 100vh;
     text-align: center;
+    background: #dfdfdf;
 
 }
 
@@ -133,7 +134,8 @@ textarea{
 }
 .footer-container{
     display: block;
-    position: fixed;
+    position: sticky;
+    top: 100%;
     
 }
 /* buttons and links*/
