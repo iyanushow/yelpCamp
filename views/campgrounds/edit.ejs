@@ -7,17 +7,17 @@
             <form action="/campgrounds/<%= camp._id %>?_method=PUT" method="POST">
                 <div class="form-group">
                     <label for="camp[name]">Camp Name </label>
-                    <input class="form-control mb-3" type="text" name="camp[name]" id="campName" value="<%=camp.name %>">
+                    <input class="form-control mb-3" type="text" name="camp[name]" id="campName" value="<%=camp.name %> " placeholder="<%=camp.name %>">
                     <label for="camp[price]">Price </label>
                     <input class="form-control" type="number" name="camp[price] " id="campPrice" value="<%=camp.price %>" min="0.1" step="0.01" required>
                 </div>
                 <div class="form-group">
-                    <label for="camp[imageUrl]">image-url </label>
-                    <input class="form-control" type="text" name="camp[imageUrl]" id="imageUrl" value="<%=camp.image %>">
+                    <label for="camp[image]">image-url </label>
+                    <input class="form-control" type="text" name="camp[image]" id="image" value="<%=camp.image %>">
                 </div>
                 <div class="form-group">
-                    <label for="camp[Info]"> Description </label>
-                    <textarea name="camp[Info]" rows="5"> <%= camp.body %> </textarea> 
+                    <label for="camp[description]"> Description </label>
+                    <textarea name="camp[description]" rows="5"> <%= camp.body %> </textarea> 
                     
                 </div>
                 <div class="form-group">
